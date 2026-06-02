@@ -1,0 +1,10 @@
+python-dotenv
+pandas
+matplotlib
+seaborn
+nltk
+sentence-transformers
+langchain-openai
+langchain-google-genai
+langgraph
+typing_extensions
