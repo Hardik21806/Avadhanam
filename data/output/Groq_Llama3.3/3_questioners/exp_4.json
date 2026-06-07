@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "Model": "Groq_Llama3.3",
+    "Questioners": 3,
+    "Iteration": 1,
+    "Distractors": "Yes"
+  },
+  "poems": [
+    {
+      "id": "854",
+      "topic": "Galactic Oceans",
+      "main_poem": [
+        "There once was a Galactic Ocean so bright,",
+        "With stars and planets in a celestial sight,",
+        "Galaxies colliding in a cosmic sway,",
+        "Black holes hiding secrets of the bay,",
+        "And in its depths, a mysterious bright,"
+      ],
+      "recall_poem": [
+        "There once was a Galactic Ocean so bright,",
+        "With stars and planets in a celestial sight,",
+        "Galaxies colliding in a cosmic sway,",
+        "Black holes hiding secrets of the bay,",
+        "And in its depths, a mysterious bright,"
+      ]
+    },
+    {
+      "id": "219",
+      "topic": "Forgotten Libraries",
+      "main_poem": [
+        "In Forgotten Libraries, where books sleep tight,",
+        "Their yellowed pages whispering through the night,",
+        "Forgotten tales of a bygone day,",
+        "Dusty tomes holding stories of the day,",
+        "And in their hearts, a timeless, gentle might,"
+      ],
+      "recall_poem": [
+        "In Forgotten Libraries, where books sleep tight,",
+        "Their yellowed pages whispering through the night,",
+        "Forgotten tales of a bygone day,",
+        "Dusty tomes holding stories of the day,",
+        "And in their hearts, a timeless, gentle might,"
+      ]
+    },
+    {
+      "id": "467",
+      "topic": "Whispering Mountains",
+      "main_poem": [
+        "Whispering Mountains held ancient delight,",
+        "Where mystic winds carried a gentle, loving light,",
+        "Echoes of a long-forgotten way,",
+        "Silent peaks keeping ancient secrets at bay,",
+        "And in its heart, an eternal delight,"
+      ],
+      "recall_poem": [
+        "Whispering Mountains held ancient delight,",
+        "Where mystic winds carried a gentle, loving light,",
+        "Echoes of a long-forgotten way,",
+        "Silent peaks keeping ancient secrets at bay,",
+        "And in its heart, an eternal delight,"
+      ]
+    }
+  ],
+  "scores": {
+    "mrs": 1.0,
+    "wos": 0.9091200466200466,
+    "tms": 0.9736486486486486,
+    "adherence_score": 1.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "model": "Groq_Llama3.3",
+  "questioners": 3,
+  "iteration": 1,
+  "distractors": true,
+  "poems": [
+    {
+      "id": "854",
+      "                   topic": "Moonlit Serenade",
+      "main_poem": [
+        "There once was a moonlit serenade night",
+        "With melodies that danced under the moon's pale light",
+        "Silent shadows swayed to the music's beat",
+        "The night's enchantment was hard to forgo",
+        "And in the music, hearts were made to take flight"
+      ],
+      "recall_poem": [
+        "There once was a moonlit serenade night",
+        "With melodies that danced under the moon's pale light",
+        "Silent shadows swayed to the music's beat",
+        "The night's enchantment was hard to forgo",
+        "And in the music, hearts were made to take flight"
+      ]
+    },
+    {
+      "id": "627",
+      "                   topic": "Forgotten Libraries",
+      "main_poem": [
+        "In forgotten libraries, old books take flight",
+        "Where dusty pages turned with a silent might",
+        "Forgotten knowledge hidden in secret seat",
+        "And mysteries waited to be found to know",
+        "And in the silence, wisdom shone with new light"
+      ],
+      "recall_poem": [
+        "In forgotten libraries, old books take flight",
+        "Where dusty pages turned with a silent might",
+        "Forgotten knowledge hidden in secret seat",
+        "And mysteries waited to be found to know",
+        "And in the silence, wisdom shone with new light"
+      ]
+    },
+    {
+      "id": "219",
+      "                   topic": "Whispering Waterfalls",
+      "main_poem": [
+        "Whispering waterfalls sang a gentle delight",
+        "And echoes that whispered a soothing, sweet sight",
+        "Gentle ripples spread on the silent creek",
+        "And peacefulness that only nature can show",
+        "And in the stillness, love became the delight"
+      ],
+      "recall_poem": [
+        "Whispering waterfalls sang a gentle delight",
+        "And echoes that whispered a soothing, sweet sight",
+        "Gentle ripples spread on the silent creek",
+        "And peacefulness that only nature can show",
+        "And in the stillness, love became the delight"
+      ]
+    }
+  ]
+}

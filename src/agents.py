@@ -1,14 +1,15 @@
 import os
 from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, MessagesState, START
 from langchain_core.messages import SystemMessage
 
 load_dotenv()
 
-# Instantiates Google Gemini API 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
+llm = ChatOpenAI(
+    openai_api_base="https://api.groq.com/openai/v1",
+    openai_api_key=os.getenv("GROQ_API_KEY"),
+    model_name="llama-3.3-70b-versatile", # Groq's fastest, high-performing model
     temperature=0.7
 )
 

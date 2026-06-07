@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "Model": "Groq_Llama3.3",
+    "Questioners": 3,
+    "Iteration": 1,
+    "Distractors": "No"
+  },
+  "poems": [
+    {
+      "id": "854",
+      "topic": "Forgotten Libraries",
+      "main_poem": [
+        "There once was a library so fine",
+        "With books that were old, and a story so mine",
+        "Dust covered the shelves slow",
+        "Silent and still as the night's woe",
+        "And knowledge that's truly divine"
+      ],
+      "recall_poem": [
+        "There once was a library so fine",
+        "With books that were old, and a story so mine",
+        "Dust covered the shelves slow",
+        "Silent and still as the night's woe",
+        "And knowledge that's truly divine"
+      ]
+    },
+    {
+      "id": "219",
+      "topic": "Midnight Skies",
+      "main_poem": [
+        "The midnight skies twinkled with divine",
+        "The stars in the sky, with a gentle design",
+        "Moonlight began to glow",
+        "Worlds beyond ours did bestow",
+        "And a celestial music so fine"
+      ],
+      "recall_poem": [
+        "The midnight skies twinkled with divine",
+        "The stars in the sky, with a gentle design",
+        "Moonlight began to glow",
+        "Worlds beyond ours did bestow",
+        "And a celestial music so fine"
+      ]
+    },
+    {
+      "id": "467",
+      "topic": "Abandoned Gardens",
+      "main_poem": [
+        "In abandoned gardens, flowers did shine",
+        "And weeds that grew tall, with a beauty so fine",
+        "Nature reclaimed all to show",
+        "Filling the heart with a gentle flow",
+        "And a beauty that's truly sublime"
+      ],
+      "recall_poem": [
+        "In abandoned gardens, flowers did shine",
+        "And weeds that grew tall, with a beauty so fine",
+        "Nature reclaimed all to show",
+        "Filling the heart with a gentle flow",
+        "And a beauty that's truly sublime"
+      ]
+    }
+  ],
+  "scores": {
+    "mrs": 1.0,
+    "wos": 0.923096348096348,
+    "tms": 0.9307783719548426,
+    "adherence_score": 0.6666666666666666
+  }
+}

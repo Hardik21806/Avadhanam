@@ -1,0 +1,62 @@
+{
+  "model": "Groq_Llama3.3",
+  "questioners": 3,
+  "iteration": 2,
+  "distractors": true,
+  "poems": [
+    {
+      "id": "854",
+      "                   topic": "Forgotten Libraries",
+      "main_poem": [
+        "There once was a library so fine",
+        "With books that were dusty and truly sublime",
+        "Forgotten tales slept on silent shelves",
+        "And whispers of knowledge were quietly felt",
+        "And the library's heart was still truly mine"
+      ],
+      "recall_poem": [
+        "There once was a library so fine",
+        "With books that were dusty and truly sublime",
+        "Forgotten tales slept on silent shelves",
+        "And whispers of knowledge were quietly felt",
+        "And the library's heart was still truly mine"
+      ]
+    },
+    {
+      "id": "467",
+      "                   topic": "Abandoned Theaters",
+      "main_poem": [
+        "An abandoned theater did stand in decline",
+        "Its stage empty, with silence so unkind",
+        "Where shadows of actors once danced themselves",
+        "And echoes of performances long since dealt",
+        "And the theater's grandeur was still on my mind"
+      ],
+      "recall_poem": [
+        "An abandoned theater did stand in decline",
+        "Its stage empty, with silence so unkind",
+        "Where shadows of actors once danced themselves",
+        "And echoes of performances long since dealt",
+        "And the theater's grandeur was still on my mind"
+      ]
+    },
+    {
+      "id": "219",
+      "                   topic": "Midnight Skies",
+      "main_poem": [
+        "Midnight skies shone with stars so divine",
+        "The world slept below, in a peaceful rhyme",
+        "The moon glowed with gentle, soft wealth",
+        "And darkness was filled with a gentle melt",
+        "And the stars shone with beauty so truly divine"
+      ],
+      "recall_poem": [
+        "Midnight skies shone with stars so divine",
+        "The world slept below, in a peaceful rhyme",
+        "The moon glowed with gentle, soft wealth",
+        "And darkness was filled with a gentle melt",
+        "And the stars shone with beauty so truly divine"
+      ]
+    }
+  ]
+}
