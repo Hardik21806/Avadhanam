@@ -1,2 +1,20 @@
+# Python environment and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
 .env
-.venv
+
+# Experiment Data (Do NOT commit these)
+data/output/
+*.csv
+*.json
+!phonetics_cache.json # Optional: Only if you want to keep the phonetic cache for speed
+
+# Generated Plots
+*.png
+
+# IDE and OS files
+.DS_Store
+.vscode/
+.idea/

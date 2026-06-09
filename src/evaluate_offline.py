@@ -53,80 +53,70 @@ def check_rhyme(line1, line2):
 
 def check_limerick_adherence(poem_lines):
     """
-    Checks if a 5-line poem adheres strictly to the AABBA scheme.
-    Returns 1.0 for perfect, 0.0 for failed.
+    Checks AABBA adherence on a scale of 0.0 to 1.0 based on 4 rhyme relations.
     """
     if len(poem_lines) != 5:
         return 0.0
     
-    is_aab = (check_rhyme(poem_lines[0], poem_lines[1]) and 
-              check_rhyme(poem_lines[0], poem_lines[4]))
-    is_bb = check_rhyme(poem_lines[2], poem_lines[3])
+    # 1. Get the rimes for all 5 lines
+    rimes = []
+    for line in poem_lines:
+        word = get_last_word(line)
+        if word not in cmu_dict:
+            rimes.append(None)
+        else:
+            rimes.append(extract_cmu_rhyme_part(cmu_dict[word][0]))
+            
+    # If we couldn't parse the dictionary, return 0
+    if None in rimes:
+        return 0.0
     
-    return 1.0 if (is_aab and is_bb) else 0.0
+    # 2. Define the 4 required rhyme relations
+    # R1: 1-2, R2: 1-5, R3: 2-5, R4: 3-4
+    relations = [
+        (rimes[0] == rimes[1]), # 1-2
+        (rimes[0] == rimes[4]), # 1-5
+        (rimes[1] == rimes[4]), # 2-5
+        (rimes[2] == rimes[3])  # 3-4
+    ]
+    
+    # 3. Calculate score based on how many relations are True
+    score = sum(relations) / 4.0
+    return score
 
 # --- 3. Offline Evaluation & File Updating ---
 def load_grade_and_update():
     """
-    Scans all JSONs, calculates Adherence, saves it BACK into the JSON,
-    and returns a DataFrame of the aggregated results.
+    Scans the JSON folder structure, grades them, and builds a DataFrame 
+    directly from the files, bypassing the broken CSV.
     """
     data_points = []
-    base_dir = "data/output/Groq_Llama3.3" # Update this to match your model folder
+    base_dir = "data/output/Groq_Llama3.3"
     
-    if not os.path.exists(base_dir):
-        print(f"Directory not found: {base_dir}")
-        return pd.DataFrame()
-
     for q_folder in os.listdir(base_dir):
         q_path = os.path.join(base_dir, q_folder)
         if os.path.isdir(q_path):
             questioner_count = int(q_folder.split('_')[0])
             
-            mrs_scores = []
-            wos_scores = []
-            tms_scores = []
-            adherence_scores = []
-            
             for exp_file in os.listdir(q_path):
                 if exp_file.endswith(".json"):
-                    file_path = os.path.join(q_path, exp_file)
-                    
-                    # 1. Open the JSON
-                    with open(file_path, 'r') as f:
+                    with open(os.path.join(q_path, exp_file), 'r') as f:
                         data = json.load(f)
                     
-                    # 2. Extract the poem and calculate adherence
-                    # Assuming the structure is data['poems'][0]['main_poem']
-                    if 'poems' in data and len(data['poems']) > 0:
-                        poem_lines = data['poems'][0].get('main_poem', [])
-                        adherence = check_limerick_adherence(poem_lines)
-                        
-                        # 3. Update the JSON data object
-                        if 'scores' not in data:
-                            data['scores'] = {} # Ensure scores block exists
-                        data['scores']['adherence_score'] = adherence
-                        
-                        # 4. Save the JSON file BACK to the disk (Self-Grading)
-                        with open(file_path, 'w') as f:
-                            json.dump(data, f, indent=4)
-                            
-                        # 5. Append to our local lists for plotting
-                        mrs_scores.append(data['scores'].get('mrs', 0))
-                        wos_scores.append(data['scores'].get('wos', 0))
-                        tms_scores.append(data['scores'].get('tms', 0))
-                        adherence_scores.append(adherence)
-            
-            # Aggregate averages for this questioner count
-            if len(mrs_scores) > 0:
-                data_points.append({
-                    'Questioners': questioner_count,
-                    'MRS': sum(mrs_scores) / len(mrs_scores),
-                    'WOS': sum(wos_scores) / len(wos_scores),
-                    'TMS': sum(tms_scores) / len(tms_scores),
-                    'Adherence': sum(adherence_scores) / len(adherence_scores)
-                })
-            
+                    
+                    # Grade the poem if not already graded
+                    poem_lines = data['poems'][0].get('main_poem', [])
+                    adherence = check_limerick_adherence(poem_lines)
+                    data['scores']['adherence_score'] = adherence
+                    
+                    # Build the data point
+                    data_points.append({
+                        'Questioners': questioner_count,
+                        'MRS': data['scores'].get('mrs', 0),
+                        'WOS': data['scores'].get('wos', 0),
+                        'TMS': data['scores'].get('tms', 0),
+                        'Adherence': adherence
+                    })
     return pd.DataFrame(data_points)
 
 # --- 4. Plotting Generation ---
